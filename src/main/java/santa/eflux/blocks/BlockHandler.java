@@ -8,20 +8,23 @@ import net.minecraft.block.Block;
  */
 public class BlockHandler {
 
-    public static Block tank;
+    public static Block generatorCombust;
 
     //Initialize blocks here
     public static void init(){
 
+        generatorCombust = new CombustionGenerator();
     }
 
     //Register blocks here
     public static void regi(){
 
+        GameRegistry.registerBlock(generatorCombust, BlockInfo.COMBUST_KEY);
     }
 
     //Recipes for blocks go here
     public static void reci(){
+
 
     }
 }

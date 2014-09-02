@@ -5,5 +5,8 @@ package santa.eflux.blocks;
  */
 public class BlockInfo {
 
+    public static final String COMBUST_UNLOCALIZED = "generatorCombust";
+    public static final String COMBUST = "combustion_generator";
+    public static final String COMBUST_KEY = "combustion_generator";
 
 }

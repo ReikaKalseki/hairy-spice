@@ -22,6 +22,8 @@ public class CombustionGenerator extends Block {
         this.setBlockTextureName("eflux:generatorCombust");
         this.setBlockName(BlockInfo.COMBUST_UNLOCALIZED);
         this.setStepSound(soundTypeMetal);
+        this.setHardness(1.5F);
+        this.setResistance(10.0F);
     }
 
     @Override

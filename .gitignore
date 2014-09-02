@@ -3,7 +3,6 @@
 .gradle
 .idea
 .project
-assets
 CREDITS-fml.txt
 eclipse
 gradle
