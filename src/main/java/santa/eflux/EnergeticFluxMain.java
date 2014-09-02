@@ -8,6 +8,8 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraft.creativetab.CreativeTabs;
 import cpw.mods.fml.common.Mod.EventHandler;
 import santa.eflux.proxies.CommonProxy;
+import santa.eflux.blocks.BlockHandler;
+import santa.eflux.items.ItemHandler;
 
 /**
  * Created by elijahfoster-wysocki on 7/14/14.
@@ -21,25 +23,33 @@ public class EnergeticFluxMain {
 
     public static CreativeTabs tabEflux = new EFluxTab("Energetic Flux");
 
-    @Mod.EventHandler
+    @EventHandler
     void pre(FMLPreInitializationEvent event){
 
         System.out.println("[E-Flux] Stuff should be working fine.");
+
+        BlockHandler.init();
+        BlockHandler.regi();
+        BlockHandler.reci();
     }
 
-    @Mod.EventHandler
+    @EventHandler
     void init(FMLInitializationEvent event){
         proxy.initRenderers();
         proxy.initSounds();
 
+        ItemHandler.init();
+        ItemHandler.reci();
+        ItemHandler.regi();
+
     }
 
-    @Mod.EventHandler
+    @EventHandler
     void post(FMLPostInitializationEvent event){
 
     }
 
     /* TODO
-
+    everything.
      */
 }
