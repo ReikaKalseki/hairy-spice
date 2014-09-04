@@ -10,6 +10,8 @@ import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityFurnace;
+import santa.eflux.blocks.GeneratorBase;
+import santa.eflux.blocks.BlockHandler;
 
 /**
  * Created by elijahfoster-wysocki on 9/2/14.
@@ -122,4 +124,59 @@ public class TileEntityCombustionGenerator extends TileEntity implements IInvent
         }
     }
 
+    @Override
+    public void updateEntity()
+    {
+        int x = this.xCoord;
+        int y = this.yCoord;
+        int z = this.zCoord;
+
+        if (this.worldObj.isRemote)
+        {
+            if (this.worldObj.getBlock(x + 1, y, z).equals(BlockHandler.generatorBase) && this.worldObj.getBlock(x - 1, y, z).equals(BlockHandler.generatorBase))
+            {
+                if (this.worldObj.getBlock(x, y, z + 1).equals(BlockHandler.generatorBase) && this.worldObj.getBlock(x, y, z - 1).equals(BlockHandler.generatorBase))
+                {
+                    if (this.worldObj.getBlock(x + 1, y, z + 1).equals(BlockHandler.generatorBase) && this.worldObj.getBlock(x - 1, y, z - 1).equals(BlockHandler.generatorBase))
+                    {
+                        if (this.worldObj.getBlock(x - 1, y, z + 1).equals(BlockHandler.generatorBase) && this.worldObj.getBlock(x + 1, y, z - 1).equals(BlockHandler.generatorBase))
+                        {
+                            if (this.worldObj.getBlock(x, y + 1, z).equals(BlockHandler.generatorBase))
+                            {
+                                if (this.worldObj.getBlock(x + 1, y + 1, z).equals(BlockHandler.generatorBase) && this.worldObj.getBlock(x - 1, y + 1, z).equals(BlockHandler.generatorBase))
+                                {
+                                    if (this.worldObj.getBlock(x, y + 1, z + 1).equals(BlockHandler.generatorBase) && this.worldObj.getBlock(x, y + 1, z - 1).equals(BlockHandler.generatorBase))
+                                    {
+                                        if (this.worldObj.getBlock(x + 1, y + 1, z + 1).equals(BlockHandler.generatorBase) && this.worldObj.getBlock(x - 1, y + 1, z - 1).equals(BlockHandler.generatorBase))
+                                        {
+                                            if (this.worldObj.getBlock(x - 1, y + 1, z + 1).equals(BlockHandler.generatorBase) && this.worldObj.getBlock(x + 1, y + 1, z - 1).equals(BlockHandler.generatorBase))
+                                            {
+                                                if (this.worldObj.getBlock(x, y + 2, z).equals(BlockHandler.tank))
+                                                {
+                                                    if (this.worldObj.getBlock(x + 1, y + 2, z).equals(BlockHandler.tank) && this.worldObj.getBlock(x - 1, y + 2, z).equals(BlockHandler.tank))
+                                                    {
+                                                        if (this.worldObj.getBlock(x, y + 2, z + 1).equals(BlockHandler.tank) && this.worldObj.getBlock(x, y + 2, z - 1).equals(BlockHandler.tank))
+                                                        {
+                                                            if (this.worldObj.getBlock(x + 1, y + 2, z + 1).equals(BlockHandler.tank) && this.worldObj.getBlock(x - 1, y + 2, z - 1).equals(BlockHandler.tank))
+                                                            {
+                                                                if (this.worldObj.getBlock(x - 1, y + 2, z + 1).equals(BlockHandler.tank) && this.worldObj.getBlock(x + 1, y + 2, z - 1).equals(BlockHandler.tank))
+                                                                {
+                                                                    this.worldObj.setTileEntity(x, y, z, new TileEntityCombustionGeneratorMulti());
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
 }

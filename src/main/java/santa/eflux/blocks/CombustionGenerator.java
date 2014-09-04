@@ -11,9 +11,7 @@ import santa.eflux.tileentity.TileEntityCombustionGenerator;
 
 import java.util.Random;
 
-/**
- * Created by elijahfoster-wysocki on 9/2/14.
- */
+
 public class CombustionGenerator extends Block {
 
     public CombustionGenerator(){
@@ -28,7 +26,7 @@ public class CombustionGenerator extends Block {
 
     @Override
     public TileEntity createTileEntity(World world, int meta){
-        return new TileEntityCombustionGenerator();
+            return new TileEntityCombustionGenerator();
     }
 
 
