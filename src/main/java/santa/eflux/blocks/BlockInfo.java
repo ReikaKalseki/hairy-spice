@@ -9,4 +9,12 @@ public class BlockInfo {
     public static final String COMBUST = "combustion_generator";
     public static final String COMBUST_KEY = "combustion_generator";
 
+    public static final String GENBASE_UNLOCALIZED = "generatorBase";
+    public static final String GENBASE = "generator_base";
+    public static final String GENBASE_KEY = "generator_base";
+
+    public static final String TANK_UNLOCALIZED = "tank";
+    public static final String TANK = "tank";
+    public static final String TANK_KEY = "tank";
+
 }

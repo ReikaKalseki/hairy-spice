@@ -1,4 +1,5 @@
-tile.generatorCombust.name=Combustion Generator
+tile.generatorCombust.name=Combustion Generator Control
+tile.generatorBase.name=Generator Base
 
 item.ironHard.name=Hardened Iron
 
