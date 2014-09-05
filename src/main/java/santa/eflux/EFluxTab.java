@@ -6,9 +6,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 
-/**
- * Created by elijahfoster-wysocki on 9/1/14.
- */
+
 public class EFluxTab extends CreativeTabs {
 
     public EFluxTab(String tabLabel)
