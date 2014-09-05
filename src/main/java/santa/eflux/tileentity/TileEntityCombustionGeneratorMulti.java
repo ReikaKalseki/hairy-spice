@@ -3,9 +3,7 @@ package santa.eflux.tileentity;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 
-/**
- * Created by elijahfoster-wysocki on 9/2/14.
- */
+
 public class TileEntityCombustionGeneratorMulti extends TileEntity {
     private boolean hasMaster, isMaster;
     private int masterX, masterY, masterZ;

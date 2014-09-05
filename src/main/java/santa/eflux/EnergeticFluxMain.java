@@ -10,18 +10,15 @@ import cpw.mods.fml.common.Mod.EventHandler;
 import santa.eflux.proxies.CommonProxy;
 import santa.eflux.blocks.BlockHandler;
 import santa.eflux.items.ItemHandler;
+import santa.eflux.reference.Reference;
+import santa.eflux.utility.LogHelper;
 
-/**
- * Created by elijahfoster-wysocki on 7/14/14.
- */
 
-@Mod(modid = "eflux", name = "Energetic Flux", version = "0.0.1")
+@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
 public class EnergeticFluxMain {
 
-    @SidedProxy(clientSide="santa.eflux.proxies.ClientProxy", serverSide="santa.eflux.proxies.CommonProxy")
+    @SidedProxy(clientSide=Reference.CLIENT_PROXY_CLASS, serverSide=Reference.COMMON_PROXY_CLASS)
     public static CommonProxy proxy;
-
-    public static CreativeTabs tabEflux = new EFluxTab("Energetic Flux");
 
     @EventHandler
     void pre(FMLPreInitializationEvent event){
@@ -31,6 +28,8 @@ public class EnergeticFluxMain {
         BlockHandler.init();
         BlockHandler.regi();
         BlockHandler.reci();
+
+        LogHelper.info("PreInit Complete");
     }
 
     @EventHandler
@@ -42,11 +41,14 @@ public class EnergeticFluxMain {
         ItemHandler.reci();
         ItemHandler.regi();
 
+        LogHelper.info("Init Complete");
     }
 
     @EventHandler
     void post(FMLPostInitializationEvent event){
 
+
+        LogHelper.info("PostInit Complete");
     }
 
     /* TODO

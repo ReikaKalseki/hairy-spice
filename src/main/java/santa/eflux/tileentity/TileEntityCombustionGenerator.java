@@ -12,10 +12,8 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityFurnace;
 import santa.eflux.blocks.GeneratorBase;
 import santa.eflux.blocks.BlockHandler;
+import santa.eflux.utility.LogHelper;
 
-/**
- * Created by elijahfoster-wysocki on 9/2/14.
- */
 public class TileEntityCombustionGenerator extends TileEntity implements IInventory{
     public ItemStack burnable;
     int burntime = 0;
@@ -162,6 +160,7 @@ public class TileEntityCombustionGenerator extends TileEntity implements IInvent
                                                                 if (this.worldObj.getBlock(x - 1, y + 2, z + 1).equals(BlockHandler.tank) && this.worldObj.getBlock(x + 1, y + 2, z - 1).equals(BlockHandler.tank))
                                                                 {
                                                                     this.worldObj.setTileEntity(x, y, z, new TileEntityCombustionGeneratorMulti());
+                                                                    LogHelper.info("Combustion Geneator MultiBlock formed");
                                                                 }
                                                             }
                                                         }
