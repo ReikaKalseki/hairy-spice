@@ -1,6 +1,7 @@
-tile.generatorCombust.name=Combustion Generator Control
-tile.generatorBase.name=Generator Base
+tile.eflux:generatorCombust.name=Combustion Generator Control
+tile.eflux:generatorBase.name=Generator Base
+tile.eflux:tank.name=Tank
 
-item.ironHard.name=Hardened Iron
+item.eflux:ironHard.name=Hardened Iron
 
 itemGroup.Energetic Flux=Energetic Flux
