@@ -8,15 +8,9 @@ import santa.eflux.reference.Reference;
 /**
  * Created by elijahfoster-wysocki on 9/2/14.
  */
-public class Tank extends Block {
+public class Tank extends BlockEflux {
 
     public Tank(){
-        super(Material.iron);
-        this.setCreativeTab(Reference.EFLUX_TAB);
-        this.setBlockTextureName(Reference.MOD_ID + ":tank");
-        this.setBlockName(BlockInfo.TANK_UNLOCALIZED);
-        this.setStepSound(soundTypeGlass);
-        this.setHardness(1.5F);
-        this.setResistance(10.0F);
+        super(Material.iron, 1.5F, 10.0F, soundTypeGlass, BlockInfo.TANK_UNLOCALIZED, Reference.EFLUX_TAB);
     }
 }

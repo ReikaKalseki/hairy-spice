@@ -8,15 +8,9 @@ import santa.eflux.reference.Reference;
 /**
  * Created by elijahfoster-wysocki on 9/2/14.
  */
-public class GeneratorBase extends Block {
+public class GeneratorBase extends BlockEflux {
 
     public GeneratorBase(){
-        super(Material.iron);
-        this.setCreativeTab(Reference.EFLUX_TAB);
-        this.setBlockTextureName(Reference.MOD_ID + ":generatorBase");
-        this.setBlockName(BlockInfo.GENBASE_UNLOCALIZED);
-        this.setStepSound(soundTypeMetal);
-        this.setHardness(1.5F);
-        this.setResistance(10.0F);
+        super(Material.iron, 1.5F, 10.0F, soundTypeMetal, BlockInfo.GENBASE_UNLOCALIZED, Reference.EFLUX_TAB);
     }
 }

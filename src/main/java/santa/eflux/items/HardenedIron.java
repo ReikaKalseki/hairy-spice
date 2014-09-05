@@ -9,12 +9,9 @@ import java.sql.Ref;
 /**
  * Created by elijahfoster-wysocki on 9/1/14.
  */
-public class HardenedIron extends Item {
+public class HardenedIron extends ItemEflux {
 
     public HardenedIron(){
-        super();
-        this.setUnlocalizedName(ItemInfo.IRON_UNLOCALIZED);
-        this.setCreativeTab(Reference.EFLUX_TAB);
-        this.setTextureName(Reference.MOD_ID + ":iron");
+        super(ItemInfo.IRON_UNLOCALIZED, Reference.EFLUX_TAB);
     }
 }

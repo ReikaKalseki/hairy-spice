@@ -13,16 +13,10 @@ import santa.eflux.tileentity.TileEntityCombustionGenerator;
 import java.util.Random;
 
 
-public class CombustionGenerator extends Block {
+public class CombustionGenerator extends BlockEflux {
 
     public CombustionGenerator(){
-        super(Material.iron);
-        this.setCreativeTab(Reference.EFLUX_TAB);
-        this.setBlockTextureName(Reference.MOD_ID + ":generatorCombust");
-        this.setBlockName(BlockInfo.COMBUST_UNLOCALIZED);
-        this.setStepSound(soundTypeMetal);
-        this.setHardness(1.5F);
-        this.setResistance(10.0F);
+        super(Material.iron, 1.5F, 10.0F, soundTypeMetal, BlockInfo.COMBUST_UNLOCALIZED, Reference.EFLUX_TAB);
     }
 
     @Override

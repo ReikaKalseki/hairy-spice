@@ -160,7 +160,7 @@ public class TileEntityCombustionGenerator extends TileEntity implements IInvent
                                                                 if (this.worldObj.getBlock(x - 1, y + 2, z + 1).equals(BlockHandler.tank) && this.worldObj.getBlock(x + 1, y + 2, z - 1).equals(BlockHandler.tank))
                                                                 {
                                                                     this.worldObj.setTileEntity(x, y, z, new TileEntityCombustionGeneratorMulti());
-                                                                    LogHelper.info("Combustion Geneator MultiBlock formed");
+                                                                    LogHelper.info("Combustion Generator MultiBlock formed");
                                                                 }
                                                             }
                                                         }

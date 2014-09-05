@@ -23,7 +23,7 @@ public class EnergeticFluxMain {
     @EventHandler
     void pre(FMLPreInitializationEvent event){
 
-        System.out.println("[E-Flux] Stuff should be working fine.");
+        LogHelper.info("Stuff should be working fine.");
 
         BlockHandler.init();
         BlockHandler.regi();
