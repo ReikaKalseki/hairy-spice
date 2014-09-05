@@ -23,6 +23,4 @@ public class CombustionGenerator extends BlockEflux {
     public TileEntity createTileEntity(World world, int meta){
             return new TileEntityCombustionGenerator();
     }
-
-
 }

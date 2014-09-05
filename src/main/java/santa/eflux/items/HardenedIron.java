@@ -6,9 +6,7 @@ import santa.eflux.reference.Reference;
 
 import java.sql.Ref;
 
-/**
- * Created by elijahfoster-wysocki on 9/1/14.
- */
+
 public class HardenedIron extends ItemEflux {
 
     public HardenedIron(){
