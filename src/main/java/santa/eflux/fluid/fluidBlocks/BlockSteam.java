@@ -23,7 +23,7 @@ public class BlockSteam extends BlockFluidClassic
     public BlockSteam(Fluid fluid, Material material)
     {
         super(fluid, material);
-        this.setCreativeTab(EnergeticFluxMain.tabEflux);
+        this.setCreativeTab(Reference.EFLUX_TAB);
     }
 
     @Override
