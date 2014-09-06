@@ -8,6 +8,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import santa.eflux.EnergeticFluxMain;
+import santa.eflux.reference.Info;
 import santa.eflux.reference.Reference;
 import santa.eflux.tileentity.TileEntityCombustionGenerator;
 import santa.eflux.tileentity.TileEntityCombustionGeneratorMulti;
@@ -20,11 +21,11 @@ public class CombustionGenerator extends BlockContainer {
     public CombustionGenerator(){
         super(Material.iron);
         this.setCreativeTab(Reference.EFLUX_TAB);
-        this.setBlockName(BlockInfo.COMBUST_UNLOCALIZED);
+        this.setBlockName(Info.Blocks.COMBUST_UNLOCALIZED);
         this.setHardness(1.5F);
         this.setResistance(10.0F);
         this.setStepSound(soundTypeMetal);
-        this.setBlockTextureName(Reference.MOD_ID + ":" + BlockInfo.COMBUST_UNLOCALIZED);
+        this.setBlockTextureName(Reference.MOD_ID + ":" + Info.Blocks.COMBUST_UNLOCALIZED);
         //super(Material.iron, 1.5F, 10.0F, soundTypeMetal, BlockInfo.COMBUST_UNLOCALIZED, Reference.EFLUX_TAB);
     }
 

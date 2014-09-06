@@ -7,6 +7,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import santa.eflux.items.ItemHandler;
+import santa.eflux.reference.Info;
 
 /**
  * Created by elijahfoster-wysocki on 9/1/14.
@@ -30,10 +31,10 @@ public class BlockHandler {
     //Register blocks here
     public static void regi(){
 
-        GameRegistry.registerBlock(generatorCombust, BlockInfo.COMBUST_KEY);
-        GameRegistry.registerBlock(generatorBase, BlockInfo.GENBASE_KEY);
-        GameRegistry.registerBlock(tank, BlockInfo.TANK_KEY);
-        GameRegistry.registerBlock(metalCompressor, BlockInfo.COMPRESSOR_KEY);
+        GameRegistry.registerBlock(generatorCombust, Info.Blocks.COMBUST_KEY);
+        GameRegistry.registerBlock(generatorBase, Info.Blocks.GENBASE_KEY);
+        GameRegistry.registerBlock(tank, Info.Blocks.TANK_KEY);
+        GameRegistry.registerBlock(metalCompressor, Info.Blocks.COMPRESSOR_KEY);
     }
 
     //Recipes for blocks go here

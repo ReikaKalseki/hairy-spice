@@ -8,6 +8,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import santa.eflux.reference.Info;
 import santa.eflux.reference.Reference;
 
 import java.util.List;
@@ -33,7 +34,7 @@ public class Hammer extends ItemEflux
                 int itemDamage = itemStack.getItemDamage();
                 itemStack.setItemDamage(itemDamage + 1);
                 int itemDamageAfter = itemStack.getItemDamage();
-                if (itemDamageAfter >= ItemInfo.HAMMER_MAX_DAMAGE)
+                if (itemDamageAfter >= Info.Items.HAMMER_MAX_DAMAGE)
                 {
                     itemStack.stackSize = 0;
                 }
@@ -51,7 +52,7 @@ public class Hammer extends ItemEflux
     @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack itemStack, EntityPlayer player, List info, boolean useExtraInformation)
     {
-        info.add("This Hammer has been used " + itemStack.getItemDamage() + "/" + ItemInfo.HAMMER_MAX_DAMAGE + " times");
+        info.add("This Hammer has been used " + itemStack.getItemDamage() + "/" + Info.Items.HAMMER_MAX_DAMAGE + " times");
 
     }
 

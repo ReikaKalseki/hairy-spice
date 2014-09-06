@@ -6,6 +6,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
+import santa.eflux.reference.Info;
 
 public class ItemHandler {
 
@@ -17,8 +18,8 @@ public class ItemHandler {
     }
 
     public static void regi(){
-        GameRegistry.registerItem(ironHard, ItemInfo.IRON_KEY);
-        GameRegistry.registerItem(hammer, ItemInfo.HAMMER_KEY);
+        GameRegistry.registerItem(ironHard, Info.Items.IRON_KEY);
+        GameRegistry.registerItem(hammer, Info.Items.HAMMER_KEY);
     }
 
     public static void reci(){

@@ -4,13 +4,14 @@ import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import santa.eflux.reference.Info;
 import santa.eflux.reference.Reference;
 import santa.eflux.tileentity.TileEntityMetalCompressor;
 
 public class MetalCompressor extends BlockEflux{
 
     public MetalCompressor(){
-        super(Material.iron, 1.5F, 10.0F, soundTypeMetal, BlockInfo.COMPRESSOR_UNLOCALIZED, Reference.EFLUX_TAB);
+        super(Material.iron, 1.5F, 10.0F, soundTypeMetal, Info.Blocks.COMPRESSOR_UNLOCALIZED, Reference.EFLUX_TAB);
     }
 
 
