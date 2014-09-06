@@ -3,10 +3,15 @@ package santa.eflux.tileentity;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import santa.eflux.utility.LogHelper;
+import santa.eflux.utility.NBTHelper;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class TileEntityCombustionGeneratorMulti extends TileEntity {
 
+    private static Map classToNameMap = new HashMap();
     private boolean hasMaster, isMaster;
     private int masterX, masterY, masterZ;
 
@@ -27,16 +32,18 @@ public class TileEntityCombustionGeneratorMulti extends TileEntity {
 
     public boolean checkMultiBlockForm(){
         int i = 0;
-        for (int x = xCoord - 1; x < xCoord + 2; x++)
-            for (int y = yCoord; y < yCoord + 3; y++)
-                for (int z = zCoord; z < zCoord + 2; z++){
-            TileEntity tile = worldObj.getTileEntity(x, y, z);
-            if (tile != null && (tile instanceof TileEntityCombustionGeneratorMulti)){
-                if (this.hasMaster()){
-                    if (((TileEntityCombustionGeneratorMulti)tile).hasMaster()) i++;
+        for (int x = xCoord - 1; x < xCoord + 2; x++) {
+            for (int y = yCoord; y < yCoord + 3; y++) {
+                for (int z = zCoord; z < zCoord + 2; z++) {
+                    TileEntity tile = worldObj.getTileEntity(x, y, z);
+                    if (tile != null && (tile instanceof TileEntityCombustionGeneratorMulti)) {
+                        if (this.hasMaster()) {
+                            if (((TileEntityCombustionGeneratorMulti) tile).hasMaster()) i++;
 
-                } else if (!((TileEntityCombustionGeneratorMulti)tile).hasMaster()) i++;
+                        } else if (!((TileEntityCombustionGeneratorMulti) tile).hasMaster()) i++;
 
+                    }
+                }
             }
         }
         return i > 25 && worldObj.isAirBlock(xCoord, yCoord + i, zCoord);
@@ -77,30 +84,38 @@ public class TileEntityCombustionGeneratorMulti extends TileEntity {
                     TileEntity tile = worldObj.getTileEntity(x, y, z);
                     if (tile != null && (tile instanceof TileEntityCombustionGeneratorMulti))
                         ((TileEntityCombustionGeneratorMulti) tile).reset();
-        }
+                }
     }
 
     @Override
     public void writeToNBT(NBTTagCompound nbttag){
-        super.writeToNBT(nbttag);
+
+        nbttag.setString("id", "TileEntityCombustionGeneratorMulti");
+        nbttag.setInteger("x", this.xCoord);
+        nbttag.setInteger("y", this.yCoord);
+        nbttag.setInteger("z", this.zCoord);
+
         nbttag.setInteger("masterX", masterX);
         nbttag.setInteger("masterY", masterY);
         nbttag.setInteger("masterZ", masterZ);
         nbttag.setBoolean("hasMaster", hasMaster);
         nbttag.setBoolean("isMaster", isMaster);
+
         if (hasMaster() && isMaster()){
             //filler
         }
+
+        LogHelper.info("TileEntityCombustionGeneratorMulti wrote to NBT");
     }
 
     @Override
     public void readFromNBT(NBTTagCompound nbttag){
         super.readFromNBT(nbttag);
-        nbttag.setInteger("masterX", masterX);
-        nbttag.setInteger("masterY", masterY);
-        nbttag.setInteger("masterZ", masterZ);
-        nbttag.setBoolean("hasMaster", hasMaster);
-        nbttag.setBoolean("isMaster", isMaster);
+        masterX = nbttag.getInteger("masterX");
+        masterY = nbttag.getInteger("masterY");
+        masterZ = nbttag.getInteger("masterZ");
+        hasMaster = nbttag.getBoolean("hasMaster");
+        isMaster = nbttag.getBoolean("isMaster");
         if (hasMaster() && isMaster()){
             //filler
         }
