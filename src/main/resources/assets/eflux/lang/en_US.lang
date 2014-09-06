@@ -1,9 +1,11 @@
 tile.eflux:generatorCombust.name=Combustion Generator Control
 tile.eflux:generatorBase.name=Generator Base
 tile.eflux:tank.name=Tank
+tile.eflux:charcoalBlock.name=Charcoal Block
 
 item.eflux:ironHard.name=Hardened Iron
-item.eflux:Hammer.name=Hammer
+item.eflux:efluxHammer.name=Hammer
+item.eflux:efluxHardenedHammer.name=Hardened Hammer
 
 itemGroup.Energetic Flux=Energetic Flux
 

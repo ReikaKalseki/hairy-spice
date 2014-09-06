@@ -17,7 +17,7 @@ public class Hammer extends ItemEflux
 {
     public Hammer()
     {
-        super("Hammer", Reference.EFLUX_TAB);
+        super(Info.Items.HAMMER_UNLOCALIZED, Reference.EFLUX_TAB);
         this.isDamageable();
         this.setMaxStackSize(1);
     }
@@ -47,7 +47,7 @@ public class Hammer extends ItemEflux
     @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack itemStack, EntityPlayer player, List info, boolean useExtraInformation)
     {
-        info.add("This Hammer has been used " + itemStack.getItemDamage() + "/" + Info.Items.HAMMER_MAX_DAMAGE + " times");
+        info.add("This " + Info.Items.HAMMER_NAME +  " has been used " + itemStack.getItemDamage() + "/" + Info.Items.HAMMER_MAX_DAMAGE + " times");
 
     }
 

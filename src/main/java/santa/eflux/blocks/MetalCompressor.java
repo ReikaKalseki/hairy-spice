@@ -30,5 +30,4 @@ public class MetalCompressor extends BlockEflux{
         }
     }
 
-
 }

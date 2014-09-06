@@ -20,5 +20,4 @@ public class EFluxTab extends CreativeTabs {
     {
         return (Items.redstone);
     }
-
 }
