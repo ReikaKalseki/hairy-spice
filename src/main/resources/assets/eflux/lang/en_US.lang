@@ -5,3 +5,5 @@ tile.eflux:tank.name=Tank
 item.eflux:ironHard.name=Hardened Iron
 
 itemGroup.Energetic Flux=Energetic Flux
+
+tile.generatorCombust.name=Combustion Generator Control

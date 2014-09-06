@@ -23,8 +23,7 @@ public class EnergeticFluxMain {
     @EventHandler
     void pre(FMLPreInitializationEvent event){
 
-        LogHelper.info("Stuff should be working fine.");
-
+        ItemHandler.init();
         BlockHandler.init();
         BlockHandler.regi();
         BlockHandler.reci();
@@ -37,7 +36,7 @@ public class EnergeticFluxMain {
         proxy.initRenderers();
         proxy.initSounds();
 
-        ItemHandler.init();
+
         ItemHandler.reci();
         ItemHandler.regi();
 

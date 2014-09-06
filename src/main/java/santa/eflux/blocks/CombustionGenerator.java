@@ -24,6 +24,7 @@ public class CombustionGenerator extends BlockContainer {
         this.setHardness(1.5F);
         this.setResistance(10.0F);
         this.setStepSound(soundTypeMetal);
+        this.setBlockTextureName(Reference.MOD_ID + ":" + BlockInfo.COMBUST_UNLOCALIZED);
         //super(Material.iron, 1.5F, 10.0F, soundTypeMetal, BlockInfo.COMBUST_UNLOCALIZED, Reference.EFLUX_TAB);
     }
 
