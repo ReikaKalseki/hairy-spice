@@ -5,6 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.ShapedOreRecipe;
 import santa.eflux.items.ItemHandler;
 
 /**
@@ -38,9 +39,9 @@ public class BlockHandler {
     //Recipes for blocks go here
     public static void reci(){
 
-        GameRegistry.addRecipe(new ItemStack(generatorBase, 1), new Object[]{"XXX", "XXX", "XXX", Character.valueOf('X'), ItemHandler.ironHard});
-        GameRegistry.addRecipe(new ItemStack(generatorCombust, 1), new Object[]{"XYX", "DFD", "XXX", Character.valueOf('X'), generatorBase, Character.valueOf('Y'), Items.diamond, Character.valueOf('D'), Items.redstone, Character.valueOf('F'), Blocks.furnace});
-        GameRegistry.addRecipe(new ItemStack(tank, 1), new Object[]{"XXX", "XYX", "XXX", Character.valueOf('X'), ItemHandler.ironHard, Character.valueOf('Y'), Blocks.glass});
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(generatorBase, 1),"XXX", "XXX", "XXX", 'X', ItemHandler.ironHard));
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(generatorCombust, 1), "XYX", "DFD", "XXX", 'X', generatorBase, 'Y', "gemDiamond", 'D', "dustRedstone", 'F', Blocks.furnace));
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(tank, 1), "XXX", "XYX", "XXX", 'X', ItemHandler.ironHard, 'Y', "blockGlass"));
 
     }
 }
