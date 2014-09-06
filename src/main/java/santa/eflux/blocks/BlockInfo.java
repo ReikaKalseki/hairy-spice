@@ -17,4 +17,8 @@ public class BlockInfo {
     public static final String TANK = "tank";
     public static final String TANK_KEY = "tank";
 
+    public static final String COMPRESSOR_UNLOCALIZED = "metalCompressor";
+    public static final String COMPRESSOR = "metal_compressor";
+    public static final String COMPRESSOR_KEY = "metal_compressor";
+
 }
