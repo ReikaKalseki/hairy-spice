@@ -7,15 +7,16 @@ import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import santa.eflux.fluid.fluidBlocks.BlockSteam;
+import santa.eflux.reference.Info;
 import santa.eflux.reference.Reference;
 
 public class FluidHandler
 {
     //general
-    public static Fluid[] fluids = {new Fluid("steam")};
+    public static Fluid[] fluids = {new Fluid(Info.Fluids.STEAM_NAME)};
 
     //steam
-    public static Block efluxSteamBlock = new BlockSteam(fluids[1], Material.water).setBlockName("steam");
+    public static Block efluxSteamBlock = new BlockSteam();
 
     public void init() {
         doFluidStuff();
@@ -31,7 +32,7 @@ public class FluidHandler
     public void doFluidStuff()
     {
         //steam
-        doFluidModification(0, 100, 500, true, fluids[1], efluxSteamBlock);
+        doFluidModification(Info.Fluids.STEAM_LUMINOSITY, Info.Fluids.STEAM_TEMPERATURE, Info.Fluids.STEAM_VISCOSITY, Info.Fluids.STEAM_IS_GASEOUS, fluids[1], efluxSteamBlock);
     }
 
     public void doFluidModification(int luminosity, int temperature, int viscosity, boolean gaseous, Fluid fluid, Block fluidBlock)

@@ -23,10 +23,11 @@ public class BlockFluidEflux extends BlockFluidClassic
     @SideOnly(Side.CLIENT)
     protected IIcon flowingIcon;
 
-    public BlockFluidEflux(Fluid fluid, Material material, CreativeTabs creativeTab, String name) {
+    public BlockFluidEflux(Fluid fluid, Material material, CreativeTabs creativeTab, String name, String blockName) {
         super(fluid, material);
         this.setCreativeTab(creativeTab);
         localName = name;
+        this.setBlockName(name);
     }
 
     @Override
@@ -37,8 +38,8 @@ public class BlockFluidEflux extends BlockFluidClassic
     @SideOnly(Side.CLIENT)
     @Override
     public void registerBlockIcons(IIconRegister register) {
-        stillIcon = register.registerIcon(Reference.MOD_ID + ":" + localName + "Still");
-        flowingIcon = register.registerIcon(Reference.MOD_ID + ":" + localName + "Flowing");
+        stillIcon = register.registerIcon(Reference.MOD_ID + ":" + localName.toLowerCase() + "Still");
+        flowingIcon = register.registerIcon(Reference.MOD_ID + ":" + localName.toLowerCase() + "Flowing");
     }
 
     @Override

@@ -11,12 +11,14 @@ import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
 import santa.eflux.EFluxTab;
 import santa.eflux.EnergeticFluxMain;
+import santa.eflux.fluid.FluidHandler;
+import santa.eflux.reference.Info;
 import santa.eflux.reference.Reference;
 
 public class BlockSteam extends BlockFluidEflux
 {
-    public BlockSteam(Fluid fluid, Material material)
+    public BlockSteam()
     {
-        super(fluid, material, Reference.EFLUX_TAB, "steam");
+        super(FluidHandler.fluids[1], Material.water, Reference.EFLUX_TAB, Info.Fluids.STEAM_NAME, Info.Fluids.STEAM_BLOCK_NAME);
     }
 }
