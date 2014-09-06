@@ -34,18 +34,13 @@ public class Hammer extends ItemEflux
                 int itemDamage = itemStack.getItemDamage();
                 itemStack.setItemDamage(itemDamage + 1);
                 int itemDamageAfter = itemStack.getItemDamage();
-                if (itemDamageAfter >= Info.Items.HAMMER_MAX_DAMAGE)
-                {
+                if (itemDamageAfter >= Info.Items.HAMMER_MAX_DAMAGE) {
                     itemStack.stackSize = 0;
                 }
                 return true;
-            }else {
-                return false;
             }
-        }else
-        {
-            return false;
         }
+        return false;
     }
 
     @Override
