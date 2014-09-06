@@ -3,6 +3,7 @@ tile.eflux:generatorBase.name=Generator Base
 tile.eflux:tank.name=Tank
 
 item.eflux:ironHard.name=Hardened Iron
+item.eflux:Hammer.name=Hammer
 
 itemGroup.Energetic Flux=Energetic Flux
 
