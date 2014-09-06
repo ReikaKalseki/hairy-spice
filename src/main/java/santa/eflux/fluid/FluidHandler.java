@@ -11,36 +11,37 @@ import santa.eflux.reference.Reference;
 
 public class FluidHandler
 {
-    //steam
-    public static Fluid efluxSteam = new Fluid("steam");
-    public static Block efluxSteamBlock = new BlockSteam(efluxSteam, Material.water).setBlockName("steam");
+    //general
+    public static Fluid[] fluids = {new Fluid("steam")};
 
-    public void init()
-    {
+    //steam
+    public static Block efluxSteamBlock = new BlockSteam(fluids[1], Material.water).setBlockName("steam");
+
+    public void init() {
         doFluidStuff();
 
-        //register steam
-        FluidRegistry.registerFluid(efluxSteam);
-        
+        for (int i = 0; i < fluids.length; i++)
+        {
+            FluidRegistry.registerFluid(fluids[i]);
+        }
 
     }
 
     //do stuff with all fluids
     public void doFluidStuff()
     {
-        steam();
+        //steam
+        doFluidModification(0, 100, 500, true, fluids[1], efluxSteamBlock);
     }
 
-    //do steam stuff
-    public void steam()
+    public void doFluidModification(int luminosity, int temperature, int viscosity, boolean gaseous, Fluid fluid, Block fluidBlock)
     {
-        efluxSteam.setLuminosity(0);
-        efluxSteam.setTemperature(100);
-        efluxSteam.setViscosity(500);
-        efluxSteam.setGaseous(true);
+        fluid.setLuminosity(luminosity);
+        fluid.setTemperature(temperature);
+        fluid.setViscosity(viscosity);
+        fluid.setGaseous(gaseous);
 
-
-        GameRegistry.registerBlock(efluxSteamBlock, Reference.MOD_ID + "_" + efluxSteamBlock.getUnlocalizedName().substring(5));
-        efluxSteam.setUnlocalizedName(efluxSteamBlock.getUnlocalizedName());
+        GameRegistry.registerBlock(fluidBlock, Reference.MOD_ID + "_" + fluidBlock.getUnlocalizedName().substring(5));
+        fluid.setUnlocalizedName(fluidBlock.getUnlocalizedName());
     }
 }
