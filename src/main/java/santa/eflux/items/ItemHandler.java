@@ -14,17 +14,14 @@ public class ItemHandler {
     public static void init(){
         ironHard = new HardenedIron();
         hammer = new Hammer();
-        hardenedHammer = new HardenedHammer();
     }
 
     public static void regi(){
         GameRegistry.registerItem(ironHard, Info.Items.IRON_KEY);
         GameRegistry.registerItem(hammer, Info.Items.HAMMER_KEY);
-        GameRegistry.registerItem(hardenedHammer, Info.Items.HARDENED_HAMMER_KEY);
     }
 
     public static void reci(){
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(hammer), "III", "IsI", " s ", 'I', "ingotIron", 's', "stickWood"));
-        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(hardenedHammer), "III", "IsI", " s ", 'I', ironHard, 's', "stickWood"));
     }
 }

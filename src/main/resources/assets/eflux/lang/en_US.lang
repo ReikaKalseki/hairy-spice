@@ -5,7 +5,6 @@ tile.eflux:charcoalBlock.name=Charcoal Block
 
 item.eflux:ironHard.name=Hardened Iron
 item.eflux:efluxHammer.name=Hammer
-item.eflux:efluxHardenedHammer.name=Hardened Hammer
 
 itemGroup.Energetic Flux=Energetic Flux
 

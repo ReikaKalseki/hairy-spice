@@ -15,13 +15,6 @@ public final class Info
         public static final String HAMMER_KEY = "efluxHammer";
         public static final String HAMMER_NAME = "Hammer";
         public static final int HAMMER_MAX_DAMAGE = 90;
-
-        //Hardened Hammer
-        public static final String HARDENED_HAMMER_UNLOCALIZED = "efluxHardenedHammer";
-        public static final String HARDENED_HAMMER = "hardened_hammer";
-        public static final String HARDENED_HAMMER_KEY = "efluxHardenedHammer";
-        public static final String HARDENED_HAMMER_NAME = "Hardened Hammer";
-        public static final int HARDENED_HAMMER_MAX_DAMAGE = 270;
     }
 
     public static final class Blocks
