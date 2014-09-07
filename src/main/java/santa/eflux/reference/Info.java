@@ -14,7 +14,12 @@ public final class Info
         public static final String HAMMER = "hammer";
         public static final String HAMMER_KEY = "efluxHammer";
         public static final String HAMMER_NAME = "Hammer";
-        public static final int HAMMER_MAX_DAMAGE = 90;
+        public static final int HAMMER_MAX_DAMAGE = 91;
+
+        //Wrench
+        public static final String WRENCH_UNLOCALIZED = "efluxWrench";
+        public static final String WRENCH = "wrench";
+        public static final String WRENCH_KEY = "efluxWrench";
     }
 
     public static final class Blocks
