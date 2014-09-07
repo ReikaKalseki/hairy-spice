@@ -19,7 +19,6 @@ import santa.eflux.utility.LogHelper;
 
 public class MetalCompressor extends BlockEflux implements IWrenchable
 {
-
     public MetalCompressor(){
         super(Material.iron, 1.5F, 10.0F, soundTypeMetal, Info.Blocks.COMPRESSOR_UNLOCALIZED, Reference.EFLUX_TAB);
     }
@@ -102,15 +101,7 @@ public class MetalCompressor extends BlockEflux implements IWrenchable
 
     @Override
     public void rotate(World world, Block block,int x, int y, int z, int side) {
-        int i = 0;
-        if (i == 0)
-        {
-            //do stuff
-            i++;
-        } else if (i == 1)
-        {
-            i--;
-        }
+        //do stuff here
     }
 
     @Override
