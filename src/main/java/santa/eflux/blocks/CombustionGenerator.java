@@ -54,4 +54,5 @@ public class CombustionGenerator extends BlockContainer
     public TileEntity createNewTileEntity(World world, int meta){
         return new TileEntityCombustionGeneratorMulti();
     }
+
 }

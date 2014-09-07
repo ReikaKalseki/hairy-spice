@@ -30,7 +30,7 @@ public class TileEntityCombustionGeneratorMulti extends TileEntity {
         }
     }
 
-    public boolean checkMultiBlockForm(){
+    public boolean checkMultiBlockForm() {
         int i = 0;
         for (int x = xCoord - 1; x < xCoord + 2; x++) {
             for (int y = yCoord; y < yCoord + 3; y++) {
