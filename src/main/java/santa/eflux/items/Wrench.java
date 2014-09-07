@@ -22,9 +22,13 @@ public class Wrench extends ItemEflux implements IWrench
     {
         if (world.getBlock(x, y, z) instanceof IWrenchable)
         {
+            IWrenchable wrenchableBlock = (IWrenchable) world.getBlock(x, y, z);
             if (player.isSneaking())
             {
-                rightShiftClick(world, x, y, z, world.getBlock(x, y, z), side);
+                wrenchableBlock.destroy(world, world.getBlock(x, y, z), x, y, z);
+            } else
+            {
+                wrenchableBlock.rotate(world, world.getBlock(x, y, z), x, y, z, side);
             }
             return true;
         }
@@ -34,32 +38,5 @@ public class Wrench extends ItemEflux implements IWrench
     @Override
     public boolean isWrench() {
         return true;
-    }
-
-    @Override
-    public void rightClick(World world, Block block, int x, int y, int z, int side) {
-        LogHelper.info("rightClick has been called");
-        if (block instanceof IWrenchable)
-        {
-            ((IWrenchable) block).rotate(world, block, x, y, z, side);
-        }
-    }
-
-    @Override
-    public void rightShiftClick(World world, int x, int y, int z, Block block, int side) {
-        LogHelper.info("rightShiftClick has been called");
-        if (block instanceof IWrenchable)
-        {
-            ((IWrenchable) block).destroy(world, block, x, y, z);
-        }
-    }
-
-    @Override
-    public void leftClick(World world, Block block, int x, int y, int z) {
-        LogHelper.info("leftClick has been called");
-        if (block instanceof IWrenchable)
-        {
-            ((IWrenchable) block).wrenchSpecialAction(world, block, x, y, z);
-        }
     }
 }

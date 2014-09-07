@@ -43,6 +43,7 @@ public class MetalCompressor extends BlockEflux implements IWrenchable
     @Override
     public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float hitX, float hitY, float hitZ)
     {
+        Block block = world.getBlock(x, y, z);
         LogHelper.info("Metal Compressor has been activated");
         if (!world.isRemote)
         {
@@ -59,10 +60,11 @@ public class MetalCompressor extends BlockEflux implements IWrenchable
                     if (player.isSneaking())
                     {
                         LogHelper.info("Player was sneaking");
+                        destroy(world, block, x, y, z);
                         return true;
                     } else {
                         LogHelper.info("Player was not sneaking");
-                        equippedWrench.rightClick(world, world.getBlock(x,y,z), x, y, z, side);
+                        rotate(world, block, x, y, z, side);
                         return true;
                     }
                 }
@@ -86,7 +88,7 @@ public class MetalCompressor extends BlockEflux implements IWrenchable
                     IWrench equippedWrench = (IWrench) equipped;
                     if (equippedWrench.isWrench())
                     {
-                        equippedWrench.leftClick(world, world.getBlock(x, y, z), x, y, z);
+                        wrenchSpecialAction(world, world.getBlock(x, y, z), x, y, z);
                     }
                 }
             }
@@ -100,17 +102,27 @@ public class MetalCompressor extends BlockEflux implements IWrenchable
 
     @Override
     public void rotate(World world, Block block,int x, int y, int z, int side) {
-        //stuff should be here
+        int i = 0;
+        if (i == 0)
+        {
+            //do stuff
+            i++;
+        } else if (i == 1)
+        {
+            i--;
+        }
     }
 
     @Override
     public void destroy(World world, Block block, int x, int y, int z) {
-        LogHelper.info("About to destroy Block");
-        world.setBlock(x, y, z, Blocks.air);
+        if (world.getBlock(x, y, z).equals(block)) {
+            LogHelper.info("About to destroy Block");
+            world.setBlock(x, y, z, Blocks.air);
 
-        LogHelper.info("about to spawn in item");
-        Item itemToDrop = Item.getItemFromBlock(block);
-        world.spawnEntityInWorld(new EntityItem(world, x, y, z, new ItemStack(itemToDrop)));
+            LogHelper.info("about to spawn in item");
+            Item itemToDrop = Item.getItemFromBlock(block);
+            world.spawnEntityInWorld(new EntityItem(world, x, y, z, new ItemStack(itemToDrop)));
+        }
     }
 
     @Override
