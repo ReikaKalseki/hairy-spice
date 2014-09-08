@@ -26,6 +26,6 @@ public interface IWrenchable
     public boolean isRotateable();
 
 
-    //anything special (activates on left click
+    //anything special (activates on left click)
     public boolean wrenchSpecialAction(World world, Block block, int x, int y, int z);
 }
