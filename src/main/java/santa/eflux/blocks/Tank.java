@@ -9,9 +9,6 @@ import santa.eflux.EnergeticFluxMain;
 import santa.eflux.reference.Info;
 import santa.eflux.reference.Reference;
 
-/**
- * Created by elijahfoster-wysocki on 9/2/14.
- */
 public class Tank extends BlockEflux {
 
     public Tank(){
