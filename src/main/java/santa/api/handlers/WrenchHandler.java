@@ -26,11 +26,14 @@ public class WrenchHandler
             if (block instanceof IWrenchable) {
                 IWrenchable wrenchableBlock = (IWrenchable) block;
                 if (tile instanceof TileEntityMetalCompressor) {
-                    Item equipped = player.getCurrentEquippedItem() != null ? player.getCurrentEquippedItem().getItem() : null;
-                    if (equipped instanceof IWrench) {
-                        IWrench equippedWrench = (IWrench) equipped;
-                        if (equippedWrench.isWrench()) {
-                            wrenchableBlock.wrenchSpecialAction(world, block, x, y, z);
+                    ItemStack is = player.getCurrentEquippedItem();
+                    if (is != null) {
+                        Item equipped = is.getItem();
+                        if (equipped instanceof IWrench) {
+                            IWrench equippedWrench = (IWrench) equipped;
+                            if (equippedWrench.isWrench(is)) {
+                                wrenchableBlock.wrenchSpecialAction(world, block, x, y, z);
+                            }
                         }
                     }
                 }
@@ -44,23 +47,26 @@ public class WrenchHandler
         {
             LogHelper.info("isRemote");
 
-            Item equipped = player.getCurrentEquippedItem().getItem();
-            if (equipped instanceof IWrench)
-            {
-                LogHelper.info("Player has right-clicked with wrench");
-                IWrench equippedWrench = (IWrench) equipped;
-                if (equippedWrench.isWrench())
+            ItemStack is = player.getCurrentEquippedItem();
+            if (is != null) {
+                Item equipped = is.getItem();
+                if (equipped instanceof IWrench)
                 {
-                    LogHelper.info("Wrench is wrench");
-                    if (player.isSneaking())
+                    LogHelper.info("Player has right-clicked with wrench");
+                    IWrench equippedWrench = (IWrench) equipped;
+                    if (equippedWrench.isWrench(is))
                     {
-                        LogHelper.info("Player was sneaking");
-                        destroy(world, block, x, y, z);
-                        return true;
-                    } else {
-                        LogHelper.info("Player was not sneaking");
-                        rotate(world, block, x, y, z, side);
-                        return true;
+                        LogHelper.info("Wrench is wrench");
+                        if (player.isSneaking())
+                        {
+                            LogHelper.info("Player was sneaking");
+                            destroy(world, block, x, y, z);
+                            return true;
+                        } else {
+                            LogHelper.info("Player was not sneaking");
+                            rotate(world, block, x, y, z, side);
+                            return true;
+                        }
                     }
                 }
             }
@@ -98,7 +104,7 @@ public class WrenchHandler
     {
         if (itemStack.getItem() instanceof IWrench) {
             IWrench wrench = (IWrench) itemStack.getItem();
-            if (wrench.isWrench()) {
+            if (wrench.isWrench(itemStack)) {
                 if (block instanceof IWrenchable) {
                     IWrenchable wrenchableBlock = (IWrenchable) world.getBlock(x, y, z);
                     if (player.isSneaking()) {
