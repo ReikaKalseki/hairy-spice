@@ -17,5 +17,5 @@ public interface IWrench
     }
     */
     //tells if it is a wrench
-    public boolean isWrench();
+    public boolean isWrench(ItemStack is);
 }
